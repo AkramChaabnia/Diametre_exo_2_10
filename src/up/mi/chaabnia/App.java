@@ -83,16 +83,12 @@ public class App {
 
 		graph.vertexlist.get(start).timeFromSource = 0;
 
-		int number_tries = 0;
-
 		while (!to_visit.isEmpty()) {
 			Vertex min_v = to_visit.poll();
 			if (min_v == null) {
 				System.out.println("No minimum vertex found!");
 				break;
 			}
-
-			number_tries++;
 
 			for (Edge edge : min_v.adjacencylist) {
 				int to_try = edge.destination;
