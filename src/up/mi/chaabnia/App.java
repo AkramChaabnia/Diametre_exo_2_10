@@ -120,28 +120,33 @@ public class App {
 				break;
 			}
 		}
-		System.out.println("Path from " + start + " to " + end + ": " + path.toString());
-
 		return path;
 	}
 
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Enter the number of vertices: ");
+		int numVertices = scanner.nextInt();
+
 		Graph graph = new Graph();
-		graph.addVertex(10);
-		graph.addVertex(10);
-		graph.addVertex(10);
-		graph.addVertex(10);
-		graph.addVertex(10);
-		graph.addVertex(10);
-		graph.addEdge(0, 1, 4);
-		graph.addEdge(0, 2, 3);
-		graph.addEdge(1, 3, 2);
-		graph.addEdge(1, 2, 5);
-		graph.addEdge(2, 3, 7);
-		graph.addEdge(3, 4, 2);
-		graph.addEdge(4, 0, 4);
-		graph.addEdge(4, 1, 4);
-		graph.addEdge(4, 5, 6);
+
+		for (int i = 0; i < numVertices; i++) {
+			graph.addVertex();
+		}
+
+		System.out.println("Enter the edges in the format: source destination weight");
+		System.out.println("(Enter -1 to stop)");
+
+		while (true) {
+			int source = scanner.nextInt();
+			if (source == -1)
+				break;
+			int destination = scanner.nextInt();
+			double weight = scanner.nextDouble();
+			graph.addEdge(source, destination, weight);
+		}
+		scanner.close();
 
 		double diameter = findDiameter(graph, graph.num_v);
 		System.out.println("Diameter of the graph: " + diameter);

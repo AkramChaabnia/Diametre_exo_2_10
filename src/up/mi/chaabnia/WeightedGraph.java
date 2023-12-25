@@ -17,14 +17,19 @@ public class WeightedGraph {
     }
 
     static class Vertex {
-        double indivTime;
         double timeFromSource;
         Vertex prev;
         LinkedList<Edge> adjacencylist;
         int num;
 
+        public Vertex() {
+            this.timeFromSource = Double.POSITIVE_INFINITY;
+            this.prev = null;
+            this.adjacencylist = new LinkedList<>();
+            this.num = -1;
+        }
+
         public Vertex(int num) {
-            this.indivTime = Double.POSITIVE_INFINITY;
             this.timeFromSource = Double.POSITIVE_INFINITY;
             this.prev = null;
             this.adjacencylist = new LinkedList<>();
@@ -44,10 +49,8 @@ public class WeightedGraph {
             vertexlist = new ArrayList<>();
         }
 
-        public void addVertex(double indivTime) {
+        public void addVertex() {
             Vertex v = new Vertex(num_v);
-            v.indivTime = indivTime;
-            v.num = num_v;
             vertexlist.add(v);
             num_v++;
         }
@@ -57,5 +60,4 @@ public class WeightedGraph {
             vertexlist.get(source).addNeighbor(edge);
         }
     }
-
 }
