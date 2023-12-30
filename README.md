@@ -99,7 +99,7 @@ To use the project, follow these steps:
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- This project was developed as part of an assignment at Université de Paris Cité.
+- This project was given by the module instructor, <u><b>Professor Nicolas Loménie</b></u> for the advanced algorithms module at Université de Paris Cité (IF05X040 Algorithmique avancée).
 
 ## 📞 Contact <a name = "contact"></a>
 
